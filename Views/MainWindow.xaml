@@ -4,10 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="BiliBili Anchor Assistant" Width="800" Height="450">
+        Title="BiliBili Anchor Assistant" Width="430" Height="90">
     <Grid>
-        <TextBlock>Room ID: </TextBlock>
-        <TextBox Width="90" Height="30">2</TextBox>
-        <Button Click="ConnectButton" Width="70" Height="20" Style="{StaticResource CustomButtonStyle}">Connect</Button>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Style="{StaticResource TextBlock}">Room ID: </TextBlock>
+            <TextBox Name="RoomID" MinWidth="100" Height="30" Style="{StaticResource TextBox}" />
+            <Button Click="ConnectButton" Width="70" Height="30" Background="MediumSpringGreen"
+                    Style="{StaticResource ButtonStyle}">
+                Connect
+            </Button>
+            <Button Click="SongManager" Width="100" Height="30" Background="Tan" Style="{StaticResource ButtonStyle}">Song Manager</Button>
+        </StackPanel>
     </Grid>
 </Window>
