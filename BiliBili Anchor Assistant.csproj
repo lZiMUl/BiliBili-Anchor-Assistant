@@ -10,19 +10,29 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <None Remove="assets\icon.ico" />
+        <None Remove="assets\icon.ico"/>
     </ItemGroup>
 
     <ItemGroup>
-      <None Remove="Resources\Images\icon.png" />
+        <None Remove="Resources\Images\icon.png"/>
     </ItemGroup>
 
     <ItemGroup>
-      <Page Update="Views\MainWindow.xaml">
-        <Generator>MSBuild:Compile</Generator>
-        <XamlRuntime>Wpf</XamlRuntime>
-        <SubType>Designer</SubType>
-      </Page>
+        <Page Update="Views\MainWindowxaml">
+            <Generator>MSBuild:Compile</Generator>
+            <XamlRuntime>Wpf</XamlRuntime>
+            <SubType>Designer</SubType>
+        </Page>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="Resources\Images\icon.ico"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Resource Include="Resources\Images\Icon.ico">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
     </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿<Window x:Class="BiliBili_Anchor_Assistant.MainWindow"
+﻿<Window x:Class="BiliBili_Anchor_Assistant.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,8 +6,8 @@
         mc:Ignorable="d"
         Title="BiliBili Anchor Assistant" Width="800" Height="450">
     <Grid>
-        <Image Source="/Resources/Images/icon.ico"></Image>
-        <TextBox>Room ID: </TextBox>
-        <Button Click="ConnectButton" Width="70" Height="20">Connect</Button>
+        <TextBlock>Room ID: </TextBlock>
+        <TextBox Width="90" Height="30">2</TextBox>
+        <Button Click="ConnectButton" Width="70" Height="20" Style="{StaticResource CustomButtonStyle}">Connect</Button>
     </Grid>
 </Window>

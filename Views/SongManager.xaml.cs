@@ -3,19 +3,20 @@ using System.Windows.Controls;
 
 namespace BiliBili_Anchor_Assistant.Views
 {
-    public partial class SongManager : Window
+    public partial class SongManager
     {
         public SongManager()
         {
             InitializeComponent();
+            Icon = Config.Icon;
         }
 
         private void AddSong(object sender, RoutedEventArgs e)
         {
-            StackPanel stackPanel = new StackPanel();
+            var stackPanel = new StackPanel();
             stackPanel.Orientation = Orientation.Horizontal;
 
-            TextBox textBox = new TextBox();
+            var textBox = new TextBox();
             textBox.Text = "1";
 
             stackPanel.Children.Add(textBox);
@@ -27,4 +28,3 @@ namespace BiliBili_Anchor_Assistant.Views
         }
     }
 }
-

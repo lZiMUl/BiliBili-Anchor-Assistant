@@ -1,14 +1,15 @@
 ﻿using System.Net.Http;
+using System.Net.Http.Headers;
 
 namespace BiliBili_Anchor_Assistant.Tools
 {
     public class Http
     {
-        public static async Task<String> Get(string url)
+        public static async Task<string> Get(string url)
         {
-            HttpClient httpClient = new HttpClient();
-            string result = String.Empty;
-            HttpResponseMessage httpResponseMessage = await httpClient.GetAsync(url);
+            var httpClient = new HttpClient();
+            string result = string.Empty;
+            var httpResponseMessage = await httpClient.GetAsync(url);
             if (httpResponseMessage.IsSuccessStatusCode)
             {
                 httpResponseMessage.EnsureSuccessStatusCode();
@@ -22,11 +23,11 @@ namespace BiliBili_Anchor_Assistant.Tools
         }
         public static async Task<string> Post(string url, string postDataStr)
         {
-            HttpClient httpClient = new HttpClient();
+            var httpClient = new HttpClient();
             HttpContent httpContent = new StringContent(postDataStr);
-            string result = String.Empty;
-            httpContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
-            HttpResponseMessage httpResponseMessage = await httpClient.PostAsync(url, httpContent);
+            string result = string.Empty;
+            httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            var httpResponseMessage = await httpClient.PostAsync(url, httpContent);
             if (httpResponseMessage.IsSuccessStatusCode)
             {
                 httpResponseMessage.EnsureSuccessStatusCode();

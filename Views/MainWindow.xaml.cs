@@ -1,28 +1,21 @@
 ﻿using System.Windows;
-using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
-using BiliBili_Anchor_Assistant.Tools;
-using BiliBili_Anchor_Assistant.Views;
-
-namespace BiliBili_Anchor_Assistant;
-
-public partial class MainWindow : Window
+namespace BiliBili_Anchor_Assistant.Views
 {
-    // private static string url = "https://cn.bing.com";
-    public MainWindow()
+    public partial class MainWindow
     {
-        InitializeComponent();
-    }
-    private void ConnectButton(object sender, RoutedEventArgs e)
-    {
-        // string data = await Http.Get(url);
-        SongManager songManager = new SongManager();
-        Window window = new Window();
-        window.Content = new Frame()
+        // private static string url = "https://cn.bing.com";
+        public MainWindow()
         {
-            Content = songManager
-        };
-        window.ShowDialog();
-        // Console.Out.WriteLine(data);
+            InitializeComponent();
+            Icon = Config.Icon;
+        }
+        private void ConnectButton(object sender, RoutedEventArgs e)
+        {
+            // string data = await Http.Get(url);
+            new SongManager().ShowDialog();
+            // Console.Out.WriteLine(data);
+        }
     }
 }
