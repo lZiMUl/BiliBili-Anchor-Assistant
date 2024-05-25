@@ -4,44 +4,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         mc:Ignorable="d"
-        Title="Song Manager" Width="800" Height="450">
-    <Grid Margin="12">
+        Title="Song Manager (By lZiMUl)" Width="800" Height="450"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="3" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal" Width="auto" Height="30" Margin="0 5" VerticalAlignment="Top"
                     HorizontalAlignment="Left">
-            <Button Click="AddSong" Background="MediumSpringGreen" Style="{StaticResource ButtonStyle}">
+            <Button Width="70" Height="30" Click="AddSong" Background="MediumSpringGreen"
+                    Style="{StaticResource ButtonStyle}">
                 Add Song
             </Button>
         </StackPanel>
         <Border Grid.Row="1" BorderThickness="0 2" BorderBrush="Gray" HorizontalAlignment="Stretch" />
-        <DataGrid Grid.Row="2" Width="Auto" Height="30" Margin="0 5" IsReadOnly="True" CanUserResizeColumns="False" CanUserResizeRows="False">
+        <DataGrid Name="DataGrid" Grid.Row="2" Width="Auto" Height="30" Margin="0 5" IsReadOnly="True"
+                  CanUserResizeColumns="False"
+                  CanUserResizeRows="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="音乐名称" Width="*">
+                <DataGridTextColumn Header="Name" Width="*">
                     <DataGridTextColumn.CellStyle>
                         <Style TargetType="DataGridCell">
-                            <Setter Property="IsHitTestVisible" Value="False"/>
-                            <Setter Property="Focusable" Value="False"/>
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="DataGridCell">
-                                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}">
-                                            <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
+                            <Setter Property="IsHitTestVisible" Value="False" />
+                            <Setter Property="Focusable" Value="False" />
                         </Style>
                     </DataGridTextColumn.CellStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="音乐作者" Width="*">
+                <DataGridTextColumn Header="Author" Width="*">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -49,7 +42,7 @@
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="音乐时间" Width="*">
+                <DataGridTextColumn Header="Time" Width="*">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -57,7 +50,7 @@
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="音乐大小" Width="*">
+                <DataGridTextColumn Header="Size" Width="*">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -65,24 +58,24 @@
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="音乐操作" Width="*">
+                <DataGridTextColumn Header="Action" Width="*">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="HorizontalAlignment" Value="Center" />
                             <Setter Property="VerticalAlignment" Value="Center" />
                         </Style>
                     </DataGridTextColumn.ElementStyle>
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
                 </DataGridTextColumn>
+
             </DataGrid.Columns>
         </DataGrid>
-        <Grid Grid.Row="3" Name="SongList" Width="800">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
+        <Grid Grid.Row="3" Name="SongList">
         </Grid>
     </Grid>
 </Window>

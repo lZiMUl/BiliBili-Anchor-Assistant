@@ -5,20 +5,26 @@ namespace BiliBili_Anchor_Assistant.Views
 {
     public partial class MainWindow
     {
-        private static readonly UriBuilder Uri = new("https://cn.bing.com");
+        private static readonly List<Window> Windows = new();
+        private readonly PlaySound _playSound = new();
         private SongManager? _songManager;
         public MainWindow()
         {
-            InitializeComponent();
             Icon = Config.Icon;
+            ResizeMode = ResizeMode.NoResize;
+            InitializeComponent();
+            Windows.Add(this);
         }
-        private async void ConnectButton(object sender, RoutedEventArgs e)
-        {
-            string roomId = RoomID.Text;
-            Uri.Query = "?/6";
-            string data = await Http.Get(Uri.ToString());
 
-            Console.Out.WriteLine(data);
+        private void ConnectButton(object sender, RoutedEventArgs e)
+        {
+            string roomId = RoomId.Text;
+            Config.Uri.Query = $"?/roomId={roomId}";
+            MessageBox.Show("You're wondering what's going on, aren't you? I haven't finished developing this software yet. Just wait a little longer. :) (By lZiMUl)");
+            _playSound.Completed(SoundCompleted).Play(SoundType.WindowsHardwareRemove);
+            // string data = await Http.Get(Config.Uri.ToString());
+
+            // Console.Out.WriteLine(data);
         }
         private void SongManager(object sender, RoutedEventArgs e)
         {
@@ -28,6 +34,23 @@ namespace BiliBili_Anchor_Assistant.Views
                 _songManager.Show();
             }
             _songManager.Focus();
+        }
+
+        public static void AddWindow(Window window)
+        {
+            Windows.Add(window);
+        }
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            Windows.ForEach(window =>
+            {
+                if (window != this) window.Close();
+            });
+        }
+        private void SoundCompleted(object sender, EventArgs e)
+        {
+            _playSound.Play(SoundType.WindowsHardwareInsert);
         }
     }
 }
