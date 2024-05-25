@@ -79,8 +79,8 @@ namespace BiliBili_Anchor_Assistant.Views
             labels.ForEach(label =>
             {
                 grid.ColumnDefinitions.Add(new ColumnDefinition { Width = star });
-                    Grid.SetColumn(label, (int)label.GetValue(TabIndexProperty));
-                    grid.Children.Add(label);
+                Grid.SetColumn(label, (int)label.GetValue(TabIndexProperty));
+                grid.Children.Add(label);
             });
 
             deleteButton.Click += DeleteSong;

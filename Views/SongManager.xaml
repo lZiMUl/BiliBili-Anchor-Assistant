@@ -72,10 +72,8 @@
                         </Style>
                     </DataGridTextColumn.CellStyle>
                 </DataGridTextColumn>
-
             </DataGrid.Columns>
         </DataGrid>
-        <Grid Grid.Row="3" Name="SongList">
-        </Grid>
+        <Grid Grid.Row="3" Name="SongList" />
     </Grid>
 </Window>

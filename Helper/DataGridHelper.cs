@@ -1,18 +1,20 @@
 ﻿using System.Windows.Controls;
-namespace BiliBili_Anchor_Assistant.Helper;
 
-public static class DataGridHelper
+namespace BiliBili_Anchor_Assistant.Helper
 {
-    public static double GetColumnWidthByName(DataGrid dataGrid, string columnName)
+    public static class DataGridHelper
     {
-        foreach (var column in dataGrid.Columns)
+        public static double GetColumnWidthByName(DataGrid dataGrid, string columnName)
         {
-            var dataGridColumn = column;
-            if (dataGridColumn != null && dataGridColumn.Header?.ToString() == columnName)
+            foreach (var column in dataGrid.Columns)
             {
-                return dataGridColumn.ActualWidth;
+                var dataGridColumn = column;
+                if (dataGridColumn != null && dataGridColumn.Header?.ToString() == columnName)
+                {
+                    return dataGridColumn.ActualWidth;
+                }
             }
+            return double.NaN;
         }
-        return double.NaN;
     }
 }
