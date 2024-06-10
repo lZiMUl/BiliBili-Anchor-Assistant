@@ -1,5 +1,4 @@
 ﻿using BiliBili_Anchor_Assistant.Enum;
-using BiliBili_Anchor_Assistant.Helper;
 using BiliBili_Anchor_Assistant.Tools;
 using System.Windows;
 using System.Windows.Controls;
@@ -8,12 +7,9 @@ using System.Windows.Media;
 namespace BiliBili_Anchor_Assistant.Views
 {
 
-
     public partial class SongManager
     {
 
-
-        private readonly JsonHelper<Song> _jsonHelper;
         private readonly List<Song> _songs;
 
         public SongManager()
@@ -22,9 +18,8 @@ namespace BiliBili_Anchor_Assistant.Views
             ResizeMode = ResizeMode.NoResize;
             InitializeComponent();
             MainWindow.AddWindow(this);
-
-            _jsonHelper = new JsonHelper<Song>("SongListConfig.json");
-            _songs = _jsonHelper.LoadConfig();
+            AddSongButton.Content = Config.LanguageResource.AddSong;
+            _songs = Config.SongListConfigurationManagerHelper.LoadConfig();
             foreach (var song in _songs)
             {
                 AddSongToUi(song.Uid, song);
@@ -43,13 +38,13 @@ namespace BiliBili_Anchor_Assistant.Views
                 Size = songMeta.Size
             };
             _songs.Add(song);
-            _jsonHelper.SaveConfig(_songs);
+            Config.SongListConfigurationManagerHelper.SaveConfig(_songs);
 
             AddSongToUi(guid, song);
             new PlaySound().Play(SoundTypeEnum.WindowsHardwareInsert);
         }
 
-        private void AddSong(object sender, RoutedEventArgs e)
+        private void AddSongEvent(object sender, RoutedEventArgs e)
         {
             string guid = Guid.NewGuid().ToString();
             var song = new Song
@@ -62,7 +57,7 @@ namespace BiliBili_Anchor_Assistant.Views
             };
 
             _songs.Add(song);
-            _jsonHelper.SaveConfig(_songs);
+            Config.SongListConfigurationManagerHelper.SaveConfig(_songs);
 
             AddSongToUi(guid, song);
             new PlaySound().Play(SoundTypeEnum.WindowsHardwareInsert);
@@ -72,12 +67,12 @@ namespace BiliBili_Anchor_Assistant.Views
         {
             if (sender is Button button && button.Parent is Grid grid)
             {
-                for (int index = 0; index < _jsonHelper.LoadConfig().Count; index++)
+                for (int index = 0; index < Config.SongListConfigurationManagerHelper.LoadConfig().Count; index++)
                 {
-                    if (Guid.Parse(grid.Children[0].GetValue(UidProperty).ToString() ?? new Guid().ToString()) == Guid.Parse(_jsonHelper.LoadConfig()[index].Uid ?? Guid.NewGuid().ToString()))
+                    if (Guid.Parse(grid.Children[0].GetValue(UidProperty).ToString() ?? new Guid().ToString()) == Guid.Parse(Config.SongListConfigurationManagerHelper.LoadConfig()[index].Uid ?? Guid.NewGuid().ToString()))
                     {
                         _songs.Remove(_songs[index]);
-                        _jsonHelper.SaveConfig(_songs);
+                        Config.SongListConfigurationManagerHelper.SaveConfig(_songs);
                         break;
                     }
                 }
@@ -114,7 +109,7 @@ namespace BiliBili_Anchor_Assistant.Views
             var deleteButton = new Button
             {
                 TabIndex = 5,
-                Content = "Delete",
+                Content = Config.LanguageResource.Delete,
                 Width = 175,
                 Height = 45,
                 Background = Brushes.Tomato,
@@ -143,7 +138,7 @@ namespace BiliBili_Anchor_Assistant.Views
             Grid.SetRow(grid, rowIndex);
             SongList.Children.Add(grid);
         }
-        private class Song
+        public class Song
         {
             public string? Uid { get; init; }
             public string? Name { get; init; }

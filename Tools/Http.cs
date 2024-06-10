@@ -20,7 +20,6 @@ namespace BiliBili_Anchor_Assistant.Tools
             {
                 throw new Exception("Not Get Message");
             }
-            Console.Out.WriteLine(JsonConvert.DeserializeObject(result));
             return JsonConvert.DeserializeObject<T>(result);
         }
         public static async Task<string> Post(string url, string postDataStr)

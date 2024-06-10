@@ -10,32 +10,29 @@
         <StackPanel Panel.ZIndex="0">
             <ToolBar Style="{StaticResource ToolBarStyle}" Background="CornflowerBlue">
                 <Menu Background="CornflowerBlue">
-                    <MenuItem Name="Menus" Click="Menu">
+                    <MenuItem Name="Menus" Click="MenuEvent">
                         <MenuItem Header="??????" />
                     </MenuItem>
-                    <MenuItem Name="Settings">
-                        <MenuItem Header="Languages" Click="LanguagesMenu">
-                            <MenuItem Header="1" />
-                            <MenuItem Header="2" />
+                    <MenuItem Name="SettingsMenu">
+                        <MenuItem Name="LanguagesMenu">
+                            <MenuItem Name="EnUs" Click="LanguagesChooseEvent" />
+                            <MenuItem Name="ZhCn" Click="LanguagesChooseEvent" />
                         </MenuItem>
+                        <MenuItem Name="AboutMenu" Click="AboutEvent" />
                     </MenuItem>
                 </Menu>
             </ToolBar>
         </StackPanel>
         <StackPanel Panel.ZIndex="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center"
                     Style="{StaticResource StackPanelStyle}">
-            <TextBlock Style="{StaticResource TextBlockStyle}">Room ID: </TextBlock>
+            <TextBlock Name="RoomIdTextBlock" Style="{StaticResource TextBlockStyle}" />
             <TextBox Name="RoomIdTextBox" Width="120" Height="35" Style="{StaticResource TextBoxStyle}" />
-            <Button Click="ConnectButtonEvent" MouseEnter="ConnectButtonMouseEnter"
+            <Button Name="ConnectButton" Click="ConnectButtonEvent" MouseEnter="ConnectButtonMouseEnter"
                     MouseLeave="ConnectButtonMouseLeave" Width="100" Height="35" Background="OrangeRed"
-                    Style="{StaticResource ButtonStyle}">
-                Disconnected
-            </Button>
-            <Button Click="SongManagerButtonEvent" MouseEnter="SongManagerButtonMouseEnter"
+                    Style="{StaticResource ButtonStyle}" />
+            <Button Name="SongManagerButton" Click="SongManagerButtonEvent" MouseEnter="SongManagerButtonMouseEnter"
                     MouseLeave="SongManagerButtonMouseLeave" Width="100" Height="35" Background="Tan"
-                    Style="{StaticResource ButtonStyle}">
-                Song Manager
-            </Button>
+                    Style="{StaticResource ButtonStyle}" />
         </StackPanel>
     </Grid>
 </Window>

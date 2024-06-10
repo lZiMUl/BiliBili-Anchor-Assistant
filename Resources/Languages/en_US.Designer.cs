@@ -60,11 +60,29 @@ namespace BiliBili_Anchor_Assistant.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        internal static string about {
+            get {
+                return ResourceManager.GetString("about", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Action.
         /// </summary>
         internal static string action {
             get {
                 return ResourceManager.GetString("action", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add song.
+        /// </summary>
+        internal static string add_song {
+            get {
+                return ResourceManager.GetString("add_song", resourceCulture);
             }
         }
         
@@ -123,16 +141,52 @@ namespace BiliBili_Anchor_Assistant.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Menu.
+        ///   Looks up a localized string similar to English.
         /// </summary>
-        internal static string menu {
+        internal static string en_us {
             get {
-                return ResourceManager.GetString("menu", resourceCulture);
+                return ResourceManager.GetString("en_us", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Room ID.
+        ///   Looks up a localized string similar to Immediate restart.
+        /// </summary>
+        internal static string immediate_restart {
+            get {
+                return ResourceManager.GetString("immediate_restart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Languages.
+        /// </summary>
+        internal static string languages {
+            get {
+                return ResourceManager.GetString("languages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Later restart.
+        /// </summary>
+        internal static string later_restart {
+            get {
+                return ResourceManager.GetString("later_restart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Menu.
+        /// </summary>
+        internal static string menus {
+            get {
+                return ResourceManager.GetString("menus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Room Id: .
         /// </summary>
         internal static string room_id {
             get {
@@ -182,6 +236,42 @@ namespace BiliBili_Anchor_Assistant.Resources.Languages {
         internal static string title {
             get {
                 return ResourceManager.GetString("title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Waiting.
+        /// </summary>
+        internal static string waiting {
+            get {
+                return ResourceManager.GetString("waiting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning.
+        /// </summary>
+        internal static string warning {
+            get {
+                return ResourceManager.GetString("warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Since you changed the client language, you need to restart the client for it to take effect, do you want to restart now?.
+        /// </summary>
+        internal static string warning_content {
+            get {
+                return ResourceManager.GetString("warning_content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chinese.
+        /// </summary>
+        internal static string zh_cn {
+            get {
+                return ResourceManager.GetString("zh_cn", resourceCulture);
             }
         }
     }

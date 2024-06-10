@@ -16,10 +16,8 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal" Width="auto" Height="30" Margin="0 5" VerticalAlignment="Top"
                     HorizontalAlignment="Left">
-            <Button Width="70" Height="30" Click="AddSong" Background="MediumSpringGreen"
-                    Style="{StaticResource ButtonStyle}">
-                Add Song
-            </Button>
+            <Button Name="AddSongButton" Width="70" Height="30" Click="AddSongEvent" Background="MediumSpringGreen"
+                    Style="{StaticResource ButtonStyle}" />
         </StackPanel>
         <Border Grid.Row="1" BorderThickness="0 2" BorderBrush="Gray" HorizontalAlignment="Stretch" />
         <DataGrid Grid.Row="2" Width="Auto" Height="30" Margin="0 5" IsReadOnly="True"

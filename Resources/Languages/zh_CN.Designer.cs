@@ -60,11 +60,29 @@ namespace BiliBili_Anchor_Assistant.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 关于.
+        /// </summary>
+        internal static string about {
+            get {
+                return ResourceManager.GetString("about", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 活动.
         /// </summary>
         internal static string action {
             get {
                 return ResourceManager.GetString("action", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 添加歌曲.
+        /// </summary>
+        internal static string add_song {
+            get {
+                return ResourceManager.GetString("add_song", resourceCulture);
             }
         }
         
@@ -123,16 +141,52 @@ namespace BiliBili_Anchor_Assistant.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 菜单.
+        ///   Looks up a localized string similar to 英文.
         /// </summary>
-        internal static string menu {
+        internal static string en_us {
             get {
-                return ResourceManager.GetString("menu", resourceCulture);
+                return ResourceManager.GetString("en_us", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 房间 ID.
+        ///   Looks up a localized string similar to 立即重启.
+        /// </summary>
+        internal static string immediate_restart {
+            get {
+                return ResourceManager.GetString("immediate_restart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 语言.
+        /// </summary>
+        internal static string languages {
+            get {
+                return ResourceManager.GetString("languages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 稍后重启.
+        /// </summary>
+        internal static string later_restart {
+            get {
+                return ResourceManager.GetString("later_restart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 菜单.
+        /// </summary>
+        internal static string menus {
+            get {
+                return ResourceManager.GetString("menus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 房间 Id: .
         /// </summary>
         internal static string room_id {
             get {
@@ -182,6 +236,42 @@ namespace BiliBili_Anchor_Assistant.Resources.Languages {
         internal static string title {
             get {
                 return ResourceManager.GetString("title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 等待中.
+        /// </summary>
+        internal static string waiting {
+            get {
+                return ResourceManager.GetString("waiting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 警告.
+        /// </summary>
+        internal static string warning {
+            get {
+                return ResourceManager.GetString("warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 由于您更改了客户端语言, 需要重启客户端才能生效, 是否现在重启?.
+        /// </summary>
+        internal static string warning_content {
+            get {
+                return ResourceManager.GetString("warning_content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 简体中文.
+        /// </summary>
+        internal static string zh_cn {
+            get {
+                return ResourceManager.GetString("zh_cn", resourceCulture);
             }
         }
     }

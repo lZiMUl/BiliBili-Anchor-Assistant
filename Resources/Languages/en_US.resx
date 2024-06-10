@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <root>
-    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+                id="root"
+                xmlns="">
         <xsd:element name="root" msdata:IsDataSet="true">
-            
+
         </xsd:element>
     </xsd:schema>
     <resheader name="resmimetype">
@@ -13,10 +15,14 @@
         <value>1.3</value>
     </resheader>
     <resheader name="reader">
-        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
     </resheader>
     <resheader name="writer">
-        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
     </resheader>
     <data name="connect" xml:space="preserve">
         <value>Connect</value>
@@ -33,14 +39,14 @@
     <data name="song_manager" xml:space="preserve">
         <value>Song manager</value>
     </data>
-    <data name="menu" xml:space="preserve">
-        <value>Menu</value>
+    <data name="menus" xml:space="preserve">
+        <value>Menus</value>
     </data>
     <data name="settings" xml:space="preserve">
         <value>Settings</value>
     </data>
     <data name="room_id" xml:space="preserve">
-        <value>Room ID</value>
+        <value>Room Id: </value>
     </data>
     <data name="action" xml:space="preserve">
         <value>Action</value>
@@ -59,5 +65,38 @@
     </data>
     <data name="title" xml:space="preserve">
         <value>Title</value>
+    </data>
+    <data name="waiting" xml:space="preserve">
+        <value>Waiting</value>
+    </data>
+    <data name="menus" xml:space="preserve">
+        <value>Menu</value>
+    </data>
+    <data name="languages" xml:space="preserve">
+        <value>Languages</value>
+    </data>
+    <data name="en_us" xml:space="preserve">
+        <value>English</value>
+    </data>
+    <data name="zh_cn" xml:space="preserve">
+        <value>Chinese</value>
+    </data>
+    <data name="about" xml:space="preserve">
+        <value>About</value>
+    </data>
+    <data name="immediate_restart" xml:space="preserve">
+        <value>Immediate restart</value>
+    </data>
+    <data name="later_restart" xml:space="preserve">
+        <value>Later restart</value>
+    </data>
+    <data name="warning" xml:space="preserve">
+        <value>Warning</value>
+    </data>
+    <data name="warning_content" xml:space="preserve">
+        <value>Since you changed the client language, you need to restart the client for it to take effect, do you want to restart now?</value>
+    </data>
+    <data name="add_song" xml:space="preserve">
+        <value>Add song</value>
     </data>
 </root>
