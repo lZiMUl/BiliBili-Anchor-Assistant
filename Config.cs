@@ -22,7 +22,8 @@ namespace BiliBili_Anchor_Assistant
         public static readonly ConfigurationManagerHelper<AppConfig> AppConfigurationManagerHelper = new("DefaultConfig.json", new AppConfig
         {
             RequiredReboot = false,
-            Language = "EnUs"
+            Language = "EnUs",
+            RoomId = 9329583
         }, true);
         public static readonly ConfigurationManagerHelper<List<SongManager.Song>> SongListConfigurationManagerHelper = new("SongListConfig.json", new List<SongManager.Song>(), false);
         public static readonly string AppHomeUrl = "https://lzimul.top";

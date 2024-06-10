@@ -38,7 +38,7 @@ namespace BiliBili_Anchor_Assistant.Views
             ZhCn.Header = Config.LanguageResource.ZhCn;
 
             RoomIdTextBlock.Text = Config.LanguageResource.RoomId;
-            ConnectButton.Content = Config.LanguageResource.Connect;
+            ConnectButton.Content = Config.LanguageResource.Disconnected;
             SongManagerButton.Content = Config.LanguageResource.SongManager;
 
             Windows.Add(this);
@@ -110,7 +110,7 @@ namespace BiliBili_Anchor_Assistant.Views
                             ConnectEvent(button);
                             Config.AppConfigurationManagerHelper.SaveConfig(new AppConfig
                                 {
-                                    RoomId = IntPtr.Parse(RoomIdTextBox.Text).ToInt32()
+                                    RoomId = int.Parse(RoomIdTextBox.Text)
                                 }
                             );
                             MessageBox.Show(data.data.ToString());
@@ -201,14 +201,14 @@ namespace BiliBili_Anchor_Assistant.Views
         {
             var button = sender as Button;
 
-            if (button?.Content as string == Config.LanguageResource.Disconnected)
+            if (button?.Content as string == Config.LanguageResource.Connect)
             {
-                button.Content = Config.LanguageResource.Disconnect;
+                button.Content = Config.LanguageResource.Disconnected;
                 button.Background = Brushes.OrangeRed;
             }
-            else if (button?.Content as string == Config.LanguageResource.Connected)
+            else if (button?.Content as string == Config.LanguageResource.Disconnect)
             {
-                button.Content = Config.LanguageResource.Connect;
+                button.Content = Config.LanguageResource.Connected;
                 button.Background = Brushes.MediumSpringGreen;
             }
         }
