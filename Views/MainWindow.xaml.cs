@@ -189,7 +189,8 @@ namespace BiliBili_Anchor_Assistant.Views
             {
                 button.Content = Config.LanguageResource.Disconnect;
                 button.Background = Brushes.OrangeRed;
-            } else if (button?.Content as string == Config.LanguageResource.Disconnected)
+            }
+            else if (button?.Content as string == Config.LanguageResource.Disconnected)
             {
                 button.Content = Config.LanguageResource.Connect;
                 button.Background = Brushes.MediumSpringGreen;
@@ -204,7 +205,8 @@ namespace BiliBili_Anchor_Assistant.Views
             {
                 button.Content = Config.LanguageResource.Disconnect;
                 button.Background = Brushes.OrangeRed;
-            } else if (button?.Content as string == Config.LanguageResource.Connected)
+            }
+            else if (button?.Content as string == Config.LanguageResource.Connected)
             {
                 button.Content = Config.LanguageResource.Connect;
                 button.Background = Brushes.MediumSpringGreen;
