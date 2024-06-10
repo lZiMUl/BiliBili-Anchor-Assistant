@@ -22,11 +22,11 @@
             </Button>
         </StackPanel>
         <Border Grid.Row="1" BorderThickness="0 2" BorderBrush="Gray" HorizontalAlignment="Stretch" />
-        <DataGrid Name="DataGrid" Grid.Row="2" Width="Auto" Height="30" Margin="0 5" IsReadOnly="True"
+        <DataGrid Grid.Row="2" Width="Auto" Height="30" Margin="0 5" IsReadOnly="True"
                   CanUserResizeColumns="False"
                   CanUserResizeRows="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Width="*">
+                <DataGridTextColumn Header="Title" Width="*">
                     <DataGridTextColumn.CellStyle>
                         <Style TargetType="DataGridCell">
                             <Setter Property="IsHitTestVisible" Value="False" />

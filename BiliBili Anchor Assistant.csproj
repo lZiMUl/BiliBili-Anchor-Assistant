@@ -36,7 +36,31 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="Resources\Languages\zh_CN.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>zh_CN.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Languages\en_US.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>en_US.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Resources\Languages\zh_CN.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>zh_CN.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Languages\en_US.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>en_US.resx</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 </Project>

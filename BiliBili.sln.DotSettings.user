@@ -1,0 +1,14 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=BiliBili_0020Anchor_0020Assistant_002FResources_002FLanguages_002Fen_005FUS/@EntryIndexedValue">True</s:Boolean>
+	
+	
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=BiliBili_0020Anchor_0020Assistant_002FResources_002FLanguages_002FUS_005Fen/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=BiliBili_0020Anchor_0020Assistant_002FResources_002FLanguages_002FUS_005Fen/@EntryIndexRemoved">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=BiliBili_0020Anchor_0020Assistant_002FResources_002FLanguages_002FZH_005FCN/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=BiliBili_0020Anchor_0020Assistant_002FResources_002FLanguages_002FZH_005Fcn/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=BiliBili_0020Anchor_0020Assistant_002FResources_002FLanguages_002Fzh_005FCN/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=BiliBili_0020Anchor_0020Assistant_002FResources_002FLanguages_002FZH_005FCN/@EntryIndexRemoved">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=BiliBili_0020Anchor_0020Assistant_002FResources_002FLanguages_002FZH_005Fcn/@EntryIndexRemoved">True</s:Boolean>
+	
+	<s:String x:Key="/Default/ResxEditorPersonal/DisabledLanguages/@EntryValue"></s:String>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/Initialized/@EntryValue">True</s:Boolean></wpf:ResourceDictionary>

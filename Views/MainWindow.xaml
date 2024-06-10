@@ -4,17 +4,38 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="BiliBili Anchor Assistant (By lZiMUl)" Width="430" Height="90"
+        Title="BiliBili Anchor Assistant (By lZiMUl)" Width="450" Height="150"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock Style="{StaticResource TextBlock}">Room ID: </TextBlock>
-            <TextBox Name="RoomId" Width="100" Height="30" Style="{StaticResource TextBox}" />
-            <Button Click="ConnectButton" Width="70" Height="30" Background="MediumSpringGreen"
+        <StackPanel Panel.ZIndex="0">
+            <ToolBar Style="{StaticResource ToolBarStyle}" Background="CornflowerBlue">
+                <Menu Background="CornflowerBlue">
+                    <MenuItem Name="Menus" Click="Menu">
+                        <MenuItem Header="??????" />
+                    </MenuItem>
+                    <MenuItem Name="Settings">
+                        <MenuItem Header="Languages" Click="LanguagesMenu">
+                            <MenuItem Header="1" />
+                            <MenuItem Header="2" />
+                        </MenuItem>
+                    </MenuItem>
+                </Menu>
+            </ToolBar>
+        </StackPanel>
+        <StackPanel Panel.ZIndex="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center"
+                    Style="{StaticResource StackPanelStyle}">
+            <TextBlock Style="{StaticResource TextBlockStyle}">Room ID: </TextBlock>
+            <TextBox Name="RoomIdTextBox" Width="120" Height="35" Style="{StaticResource TextBoxStyle}" />
+            <Button Click="ConnectButtonEvent" MouseEnter="ConnectButtonMouseEnter"
+                    MouseLeave="ConnectButtonMouseLeave" Width="100" Height="35" Background="OrangeRed"
                     Style="{StaticResource ButtonStyle}">
-                Connect
+                Disconnected
             </Button>
-            <Button Click="SongManager" Width="100" Height="30" Background="Tan" Style="{StaticResource ButtonStyle}">Song Manager</Button>
+            <Button Click="SongManagerButtonEvent" MouseEnter="SongManagerButtonMouseEnter"
+                    MouseLeave="SongManagerButtonMouseLeave" Width="100" Height="35" Background="Tan"
+                    Style="{StaticResource ButtonStyle}">
+                Song Manager
+            </Button>
         </StackPanel>
     </Grid>
 </Window>

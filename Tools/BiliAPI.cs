@@ -34,11 +34,11 @@ namespace BiliBili_Anchor_Assistant.Tools
         {
             _clientWebSocket.ConnectAsync(new Uri("ws://localhost:6969/ws"),
                 CancellationToken.None);
-            AddEventListener("start", (status) =>
+            AddEventListener("start", status =>
             {
 
             });
-            AddEventListener("stop", (status) =>
+            AddEventListener("stop", status =>
             {
 
             });
