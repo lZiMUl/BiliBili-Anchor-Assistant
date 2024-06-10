@@ -1,20 +1,104 @@
-﻿using System.Windows;
+﻿using BiliBili_Anchor_Assistant.Enum;
+using BiliBili_Anchor_Assistant.Helper;
+using BiliBili_Anchor_Assistant.Tools;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace BiliBili_Anchor_Assistant.Views
 {
+
+
     public partial class SongManager
     {
+
+
+        private readonly JsonHelper<Song> _jsonHelper;
+        private readonly List<Song> _songs;
+
         public SongManager()
         {
             Icon = Config.Icon;
             ResizeMode = ResizeMode.NoResize;
             InitializeComponent();
             MainWindow.AddWindow(this);
+
+            _jsonHelper = new JsonHelper<Song>("SongListConfig.json");
+            _songs = _jsonHelper.LoadConfig();
+            foreach (var song in _songs)
+            {
+                AddSongToUi(song.Uid, song);
+            }
+        }
+
+        public void AddSong(SongMeta songMeta)
+        {
+            string guid = Guid.NewGuid().ToString();
+            var song = new Song
+            {
+                Uid = guid,
+                Name = songMeta.Name,
+                Author = songMeta.Author,
+                Time = songMeta.Time,
+                Size = songMeta.Size
+            };
+            _songs.Add(song);
+            _jsonHelper.SaveConfig(_songs);
+
+            AddSongToUi(guid, song);
+            new PlaySound().Play(SoundTypeEnum.WindowsHardwareInsert);
         }
 
         private void AddSong(object sender, RoutedEventArgs e)
+        {
+            string guid = Guid.NewGuid().ToString();
+            var song = new Song
+            {
+                Uid = guid,
+                Name = "a",
+                Author = "b",
+                Time = "c",
+                Size = "d"
+            };
+
+            _songs.Add(song);
+            _jsonHelper.SaveConfig(_songs);
+
+            AddSongToUi(guid, song);
+            new PlaySound().Play(SoundTypeEnum.WindowsHardwareInsert);
+        }
+
+        private void DeleteSong(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button && button.Parent is Grid grid)
+            {
+                for (int index = 0; index < _jsonHelper.LoadConfig().Count; index++)
+                {
+                    if (Guid.Parse(grid.Children[0].GetValue(UidProperty).ToString() ?? new Guid().ToString()) == Guid.Parse(_jsonHelper.LoadConfig()[index].Uid ?? Guid.NewGuid().ToString()))
+                    {
+                        _songs.Remove(_songs[index]);
+                        _jsonHelper.SaveConfig(_songs);
+                        break;
+                    }
+                }
+                SongList.Children.Remove(grid);
+                new PlaySound().Play(SoundTypeEnum.WindowsHardwareRemove);
+            }
+        }
+
+        private Label CreateLabel(string guid, string content, SolidColorBrush background) => new()
+        {
+            Uid = guid,
+            Content = $"{content}",
+            Width = 175,
+            Height = 45,
+            Margin = new Thickness(2, 1, 2, 1),
+            HorizontalAlignment = HorizontalAlignment.Center,
+            VerticalAlignment = VerticalAlignment.Top,
+            Background = background
+        };
+
+        private void AddSongToUi(string guid, Song song)
         {
             var grid = new Grid
             {
@@ -22,46 +106,10 @@ namespace BiliBili_Anchor_Assistant.Views
             };
             var labels = new List<Label>
             {
-                new()
-                {
-                    TabIndex = 0,
-                    Content = "a", Width = 175,
-                    Height = 45,
-                    Margin = new Thickness(2, 1, 2, 1),
-                    HorizontalAlignment = HorizontalAlignment.Center,
-                    VerticalAlignment = VerticalAlignment.Top,
-                    Background = Brushes.Aqua
-                },
-                new()
-                {
-                    TabIndex = 1,
-                    Content = "b", Width = 175,
-                    Height = 45,
-                    Margin = new Thickness(2, 1, 2, 1),
-                    HorizontalAlignment = HorizontalAlignment.Center,
-                    VerticalAlignment = VerticalAlignment.Top,
-                    Background = Brushes.BurlyWood
-                },
-                new()
-                {
-                    TabIndex = 2,
-                    Content = "c", Width = 175,
-                    Height = 45,
-                    Margin = new Thickness(2, 1, 2, 1),
-                    HorizontalAlignment = HorizontalAlignment.Center,
-                    VerticalAlignment = VerticalAlignment.Top,
-                    Background = Brushes.DarkGreen
-                },
-                new()
-                {
-                    TabIndex = 3,
-                    Content = "d", Width = 175,
-                    Height = 45,
-                    Margin = new Thickness(2, 1, 2, 1),
-                    HorizontalAlignment = HorizontalAlignment.Center,
-                    VerticalAlignment = VerticalAlignment.Top,
-                    Background = Brushes.Gold
-                }
+                CreateLabel(guid, song.Name ?? "Error", Brushes.BurlyWood),
+                CreateLabel(guid, song.Author ?? "Error", Brushes.BurlyWood),
+                CreateLabel(guid, song.Time ?? "Error", Brushes.BurlyWood),
+                CreateLabel(guid, song.Size ?? "Error", Brushes.BurlyWood)
             };
             var deleteButton = new Button
             {
@@ -76,12 +124,14 @@ namespace BiliBili_Anchor_Assistant.Views
                 VerticalAlignment = VerticalAlignment.Top
             };
             var star = new GridLength(1, GridUnitType.Star);
-            labels.ForEach(label =>
-            {
-                grid.ColumnDefinitions.Add(new ColumnDefinition { Width = star });
-                Grid.SetColumn(label, (int)label.GetValue(TabIndexProperty));
-                grid.Children.Add(label);
-            });
+            labels.Select((value, index) => new { Index = index, Value = value })
+                  .ToList()
+                  .ForEach(item =>
+                  {
+                      grid.ColumnDefinitions.Add(new ColumnDefinition { Width = star });
+                      Grid.SetColumn(item.Value, item.Value.TabIndex = +item.Index);
+                      grid.Children.Add(item.Value);
+                  });
 
             deleteButton.Click += DeleteSong;
             grid.ColumnDefinitions.Add(new ColumnDefinition { Width = star });
@@ -93,13 +143,20 @@ namespace BiliBili_Anchor_Assistant.Views
             Grid.SetRow(grid, rowIndex);
             SongList.Children.Add(grid);
         }
-
-        private void DeleteSong(object sender, RoutedEventArgs e)
+        private class Song
         {
-            if (sender is Button button && button.Parent is Grid grid)
-            {
-                SongList.Children.Remove(grid);
-            }
+            public string? Uid { get; init; }
+            public string? Name { get; init; }
+            public string? Author { get; init; }
+            public string? Time { get; init; }
+            public string? Size { get; init; }
+        }
+        public class SongMeta
+        {
+            public string? Name { get; init; }
+            public string? Author { get; init; }
+            public string? Time { get; init; }
+            public string? Size { get; init; }
         }
     }
 }

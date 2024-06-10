@@ -1,11 +1,12 @@
-﻿using System.Net.Http;
+﻿using Newtonsoft.Json;
+using System.Net.Http;
 using System.Net.Http.Headers;
 
 namespace BiliBili_Anchor_Assistant.Tools
 {
     public class Http
     {
-        public static async Task<string> Get(string url)
+        public static async Task<T> Get<T>(string url)
         {
             var httpClient = new HttpClient();
             string result = string.Empty;
@@ -19,7 +20,7 @@ namespace BiliBili_Anchor_Assistant.Tools
             {
                 throw new Exception("Not Get Message");
             }
-            return result;
+            return JsonConvert.DeserializeObject<T>(result);
         }
         public static async Task<string> Post(string url, string postDataStr)
         {

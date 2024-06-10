@@ -1,31 +1,29 @@
-﻿using System.ComponentModel;
+﻿using BiliBili_Anchor_Assistant.Enum;
 using System.Media;
 
 namespace BiliBili_Anchor_Assistant.Tools
 {
     public class PlaySound : Event<SoundPlayer>
     {
-        public void Play(SoundType soundType)
-        {
-            switch (soundType)
-            {
-                case SoundType.WindowsHardwareInsert:
-                    Emit("playCompleted", new SoundPlayer(@"C:\Windows\Media\Windows Hardware Insert.wav"));
-                    break;
-
-                case SoundType.WindowsHardwareRemove:
-                    Emit("playCompleted", new SoundPlayer(@"C:\Windows\Media\Windows Hardware Remove.wav"));
-                    break;
-            }
-        }
-        public PlaySound Completed(AsyncCompletedEventHandler asyncCompletedEventHandler)
+        public void Play(SoundTypeEnum soundTypeEnum)
         {
             AddEventListener("playCompleted", player =>
             {
-                player.LoadCompleted += asyncCompletedEventHandler;
                 player.Play();
             });
-            return this;
+            switch (soundTypeEnum)
+            {
+                case SoundTypeEnum.WindowsHardwareInsert:
+                    Emit("playCompleted", new SoundPlayer(@"C:\Windows\Media\Windows Hardware Insert.wav"));
+                    break;
+
+                case SoundTypeEnum.WindowsHardwareRemove:
+                    Emit("playCompleted", new SoundPlayer(@"C:\Windows\Media\Windows Hardware Remove.wav"));
+                    break;
+                case SoundTypeEnum.WindowsBackground:
+                    Emit("playCompleted", new SoundPlayer(@"C:\Windows\Media\Windows Background.wav"));
+                    break;
+            }
         }
     }
 }

@@ -1,11 +1,27 @@
-﻿using BiliBili_Anchor_Assistant.Tools;
+﻿using BiliBili_Anchor_Assistant.Enum;
+using BiliBili_Anchor_Assistant.Helper;
+using BiliBili_Anchor_Assistant.Tools;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace BiliBili_Anchor_Assistant.Views
 {
+    public class Default
+    {
+        public string RoomId { get; init; }
+    }
+
+    public class IA {
+        public int code { get; }
+        public string message { get; }
+    }
+
     public partial class MainWindow
     {
+        private static readonly JsonHelper<Default> JsonHelper = new("DefaultConfig.json");
         private static readonly List<Window> Windows = new();
+        private static readonly BiliAPI BiliApi = new();
         private readonly PlaySound _playSound = new();
         private SongManager? _songManager;
         public MainWindow()
@@ -14,17 +30,68 @@ namespace BiliBili_Anchor_Assistant.Views
             ResizeMode = ResizeMode.NoResize;
             InitializeComponent();
             Windows.Add(this);
+            var config = JsonHelper.LoadConfig();
+            if (config.Count > 0)
+            {
+                RoomId.Text = config[0].RoomId;
+            }
+            BiliApi.AddListener(EventTypeEnum.Join, s =>
+            {
+
+            });
+            BiliApi.AddListener(EventTypeEnum.Message, s =>
+            {
+                _songManager.AddSong(new SongManager.SongMeta()
+                {
+                    Name = "a",
+                    Author = "b",
+                    Time = "c",
+                    Size = "d"
+                });
+            });
+            BiliApi.AddListener(EventTypeEnum.Gift, s =>
+            {
+
+            });
         }
 
-        private void ConnectButton(object sender, RoutedEventArgs e)
+        private async void ConnectButton(object sender, RoutedEventArgs e)
         {
-            string roomId = RoomId.Text;
-            Config.Uri.Query = $"?/roomId={roomId}";
-            MessageBox.Show("You're wondering what's going on, aren't you? I haven't finished developing this software yet. Just wait a little longer. :) (By lZiMUl)");
-            _playSound.Completed(SoundCompleted).Play(SoundType.WindowsHardwareRemove);
-            // string data = await Http.Get(Config.Uri.ToString());
+            var myself = sender as Button;
+            JsonHelper.SaveConfig(new List<Default>
+            {
+                new()
+                {
+                    RoomId = RoomId.Text
+                }
+            });
 
-            // Console.Out.WriteLine(data);
+            if (myself.Content.ToString() != "Disconnect")
+            {
+                myself.Content = "Disconnect";
+                myself.Background = Brushes.OrangeRed;
+                _playSound.Play(SoundTypeEnum.WindowsHardwareInsert);
+                BiliApi.Start();
+                string roomId = RoomId.Text;
+                Config.GetRoomId.Query = $"?id={roomId}";
+                var data = await Http.Get<IA>(Config.GetRoomId.ToString());
+                if (data.code == 0)
+                {
+                    Console.Out.WriteLine(data);
+                }
+                else
+                {
+                    MessageBox.Show(data.message);
+                }
+            }
+            else
+            {
+                myself.Content = "Connect";
+                myself.Background = Brushes.MediumSpringGreen;
+                _playSound.Play(SoundTypeEnum.WindowsHardwareRemove);
+                BiliApi.Stop();
+            }
+
         }
         private void SongManager(object sender, RoutedEventArgs e)
         {
@@ -47,10 +114,6 @@ namespace BiliBili_Anchor_Assistant.Views
             {
                 if (window != this) window.Close();
             });
-        }
-        private void SoundCompleted(object sender, EventArgs e)
-        {
-            _playSound.Play(SoundType.WindowsHardwareInsert);
         }
     }
 }
