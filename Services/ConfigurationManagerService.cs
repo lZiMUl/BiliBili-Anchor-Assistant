@@ -3,16 +3,16 @@ using System.IO;
 using System.Reflection;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
-namespace com.lZiMUl.BiliBili_Anchor_Assistant.Helper
+namespace com.lZiMUl.BiliBili_Anchor_Assistant.Services
 {
-    public class ConfigurationManagerHelper<T>
+    public class ConfigurationManagerService<T>
     {
         private readonly T _defaultConfig;
         private readonly string _filePath;
         private readonly Json _json = new();
         private readonly bool _mode;
 
-        public ConfigurationManagerHelper(string filePath, T defaultConfig, bool mode)
+        public ConfigurationManagerService(string filePath, T defaultConfig, bool mode)
         {
             _filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, filePath);
             _defaultConfig = defaultConfig;

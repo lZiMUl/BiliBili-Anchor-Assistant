@@ -1,8 +1,8 @@
 ﻿using System.Windows.Controls;
 
-namespace com.lZiMUl.BiliBili_Anchor_Assistant.Helper
+namespace com.lZiMUl.BiliBili_Anchor_Assistant.Service
 {
-    public static class DataGridHelper
+    public static class DataGridService
     {
         public static double GetColumnWidthByName(DataGrid dataGrid, string columnName)
         {

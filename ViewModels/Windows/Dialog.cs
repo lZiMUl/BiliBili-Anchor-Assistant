@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace com.lZiMUl.BiliBili_Anchor_Assistant.Views
+namespace com.lZiMUl.BiliBili_Anchor_Assistant.ViewModels.Windows
 {
     public partial class Dialog
     {
@@ -22,7 +22,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Views
 
         private void ImmediateRestartButtonEvent(object sender, RoutedEventArgs e)
         {
-            Config.AppConfigurationManagerHelper.SaveConfig(new AppConfig
+            Config.AppConfigurationManagerService.SaveConfig(new AppConfig
             {
                 RequiredReboot = true,
                 Language = _clickedItem.Name

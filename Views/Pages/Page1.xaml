@@ -1,0 +1,19 @@
+﻿<!-- MediaOpened="Element_MediaOpened" MediaEnded="Element_MediaEnded" -->
+<!-- MouseDown="OnMouseDownPlayMedia" -->
+<!-- MouseDown="OnMouseDownPauseMedia" -->
+<!-- MouseDown="OnMouseDownStopMedia" -->
+<!-- ValueChanged="ChangeMediaVolume" -->
+<!-- ValueChanged="ChangeMediaSpeedRatio" -->
+<!-- ValueChanged="SeekToMediaPosition"  -->
+
+<Page x:Class="com.lZiMUl.BiliBili_Anchor_Assistant.ViewModels.Pages.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel>
+        <StackPanel HorizontalAlignment="Center" Width="270" Orientation="Horizontal">
+            <Image x:Name="Previous" Width="50" Height="50" Margin="20" />
+            <Image x:Name="Play" Width="50" Height="50" Margin="20" />
+            <Image x:Name="Next" Width="50" Height="50" Margin="20" />
+        </StackPanel>
+    </StackPanel>
+</Page>

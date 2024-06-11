@@ -1,5 +1,6 @@
 ﻿using com.lZiMUl.BiliBili_Anchor_Assistant.Enum;
 using com.lZiMUl.BiliBili_Anchor_Assistant.Tools;
+using com.lZiMUl.BiliBili_Anchor_Assistant.ViewModels.Windows;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Windows;
@@ -7,7 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
-namespace com.lZiMUl.BiliBili_Anchor_Assistant.Views
+namespace com.lZiMUl.BiliBili_Anchor_Assistant.ViewModels
 {
     public class Result
     {
@@ -41,9 +42,9 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Views
             SongManagerButton.Content = Config.LanguageResource.SongManager;
 
             Windows.Add(this);
-            var config = Config.AppConfigurationManagerHelper.LoadConfig();
+            var config = Config.AppConfigurationManagerService.LoadConfig();
 
-            Config.AppConfigurationManagerHelper.SaveConfig(new AppConfig
+            Config.AppConfigurationManagerService.SaveConfig(new AppConfig
             {
                 RequiredReboot = false
             });
@@ -79,8 +80,8 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Views
             var clickedItem = sender as MenuItem;
             var dialog = new Dialog(Config.LanguageResource.Warning, Config.LanguageResource.WarningContent, clickedItem);
 
-            if (clickedItem.Name != Config.AppConfigurationManagerHelper.LoadConfig().Language
-                && (!Config.AppConfigurationManagerHelper.LoadConfig().RequiredReboot ?? true)
+            if (clickedItem.Name != Config.AppConfigurationManagerService.LoadConfig().Language
+                && (!Config.AppConfigurationManagerService.LoadConfig().RequiredReboot ?? true)
                 && !dialog.IsVisible) dialog.Show();
         }
 
@@ -107,7 +108,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Views
                         {
                             RoomIdTextBox.IsEnabled = false;
                             ConnectEvent(button);
-                            Config.AppConfigurationManagerHelper.SaveConfig(new AppConfig
+                            Config.AppConfigurationManagerService.SaveConfig(new AppConfig
                                 {
                                     RoomId = int.Parse(RoomIdTextBox.Text)
                                 }

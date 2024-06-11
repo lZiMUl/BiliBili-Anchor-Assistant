@@ -22,20 +22,17 @@
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     </PropertyGroup>
 
-    <ItemGroup>
-        <None Remove="assets\icon.ico"/>
-        <None Include="Resources\Images\Icon.png">
-          <Pack>True</Pack>
-          <PackagePath></PackagePath>
-        </None>
-        <None Include="Resources\Images\Icon.png">
-          <Pack>True</Pack>
-          <PackagePath></PackagePath>
-        </None>
-    </ItemGroup>
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <Prefer32bit>false</Prefer32bit>
+    </PropertyGroup>
 
     <ItemGroup>
-        <None Remove="Resources\Images\icon.png"/>
+        <None Remove="assets\icon.ico"/>
     </ItemGroup>
 
     <ItemGroup>
@@ -43,6 +40,17 @@
             <Generator>MSBuild:Compile</Generator>
             <XamlRuntime>Wpf</XamlRuntime>
             <SubType>Designer</SubType>
+        </Page>
+        <Page Update="Views\Pages\Page1.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <XamlRuntime>Wpf</XamlRuntime>
+            <SubType>Designer</SubType>
+        </Page>
+        <Page Update="Views\Windows\Dialog.xaml">
+            <Generator>MSBuild:Compile</Generator>
+        </Page>
+        <Page Update="Views\Windows\SongManager.xaml">
+            <Generator>MSBuild:Compile</Generator>
         </Page>
     </ItemGroup>
 
@@ -54,6 +62,14 @@
         <Resource Include="Resources\Images\Icon.ico">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Resource>
+        <None Remove="Resources\Images\UI\Next.png"/>
+        <Resource Include="Resources\Images\UI\next.png"/>
+        <None Remove="Resources\Images\UI\Play.png"/>
+        <Resource Include="Resources\Images\UI\Play.png"/>
+        <None Remove="Resources\Images\UI\Previous.png"/>
+        <Resource Include="Resources\Images\UI\Previous.png"/>
+        <None Remove="Resources\Images\UI\Pause.png"/>
+        <Resource Include="Resources\Images\UI\Pause.png"/>
     </ItemGroup>
 
     <ItemGroup>
@@ -83,6 +99,10 @@
             <AutoGen>True</AutoGen>
             <DependentUpon>en_US.resx</DependentUpon>
         </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="Resources\Images\UI\"/>
     </ItemGroup>
 
 </Project>

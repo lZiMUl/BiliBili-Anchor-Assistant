@@ -1,8 +1,8 @@
 ﻿using System.Windows;
 
-namespace com.lZiMUl.BiliBili_Anchor_Assistant.Helper
+namespace com.lZiMUl.BiliBili_Anchor_Assistant.Service
 {
-    public class CustomPropertiesHelper
+    public class CustomPropertiesService
     {
         public static class Properties
         {
