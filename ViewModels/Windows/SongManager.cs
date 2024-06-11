@@ -137,7 +137,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.ViewModels.Windows
                         Height = 45,
                         Background = Brushes.Tomato,
                         Style = FindResource("ButtonStyle") as Style,
-                        Margin = new Thickness(2, 1, 2, 1),
+                        Margin = new Thickness(1, -2, 1, 2),
                         HorizontalAlignment = HorizontalAlignment.Center,
                         VerticalAlignment = VerticalAlignment.Top,
                         FontSize = 15
