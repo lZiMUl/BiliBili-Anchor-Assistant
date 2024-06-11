@@ -1,4 +1,4 @@
-﻿namespace BiliBili_Anchor_Assistant.Tools
+﻿namespace com.lZiMUl.BiliBili_Anchor_Assistant.Tools
 {
     public class Event<T>
     {

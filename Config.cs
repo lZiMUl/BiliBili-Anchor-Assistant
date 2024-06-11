@@ -1,11 +1,11 @@
-﻿using BiliBili_Anchor_Assistant.Helper;
-using BiliBili_Anchor_Assistant.Views;
+﻿using com.lZiMUl.BiliBili_Anchor_Assistant.Helper;
+using com.lZiMUl.BiliBili_Anchor_Assistant.Views;
 using System.IO;
 using System.Reflection;
 using System.Resources;
 using System.Windows.Media.Imaging;
 
-namespace BiliBili_Anchor_Assistant
+namespace com.lZiMUl.BiliBili_Anchor_Assistant
 {
     public class AppConfig
     {
@@ -29,8 +29,8 @@ namespace BiliBili_Anchor_Assistant
         public static readonly string AppHomeUrl = "https://lzimul.top";
         public static readonly UriBuilder GetRoomId = new("https://api.live.bilibili.com/room/v1/Room/room_init");
         public static readonly UriBuilder GetChatServer = new("https://api.live.bilibili.com/room/v1/Danmu/getConf");
-        private static readonly ResourceManager EnglishResourceManager = new("BiliBili_Anchor_Assistant.Resources.Languages.en_US", Assembly.GetExecutingAssembly());
-        private static readonly ResourceManager ChineseResourceManager = new("BiliBili_Anchor_Assistant.Resources.Languages.zh_CN", Assembly.GetExecutingAssembly());
+        private static readonly ResourceManager EnglishResourceManager = new("com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages.en_US", Assembly.GetExecutingAssembly());
+        private static readonly ResourceManager ChineseResourceManager = new("com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages.zh_CN", Assembly.GetExecutingAssembly());
 
         private static string GetLocalizedString(string resourceName)
         {

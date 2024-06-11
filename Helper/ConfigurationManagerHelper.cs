@@ -3,7 +3,7 @@ using System.IO;
 using System.Reflection;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
-namespace BiliBili_Anchor_Assistant.Helper
+namespace com.lZiMUl.BiliBili_Anchor_Assistant.Helper
 {
     public class ConfigurationManagerHelper<T>
     {

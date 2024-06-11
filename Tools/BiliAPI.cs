@@ -1,6 +1,6 @@
 ﻿using System.Net.WebSockets;
 
-namespace BiliBili_Anchor_Assistant.Tools
+namespace com.lZiMUl.BiliBili_Anchor_Assistant.Tools
 {
     public enum EventTypeEnum
     {

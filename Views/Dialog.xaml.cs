@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace BiliBili_Anchor_Assistant.Views
+namespace com.lZiMUl.BiliBili_Anchor_Assistant.Views
 {
     public partial class Dialog
     {
@@ -10,7 +10,6 @@ namespace BiliBili_Anchor_Assistant.Views
 
         public Dialog(string title, string message, MenuItem clickedItem)
         {
-            Icon = Config.Icon;
             ResizeMode = ResizeMode.NoResize;
             InitializeComponent();
             MainWindow.AddWindow(this);

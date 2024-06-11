@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace BiliBili_Anchor_Assistant.Helper
+namespace com.lZiMUl.BiliBili_Anchor_Assistant.Helper
 {
     public class CustomPropertiesHelper
     {

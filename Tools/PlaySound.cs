@@ -1,7 +1,7 @@
-﻿using BiliBili_Anchor_Assistant.Enum;
+﻿using com.lZiMUl.BiliBili_Anchor_Assistant.Enum;
 using System.Media;
 
-namespace BiliBili_Anchor_Assistant.Tools
+namespace com.lZiMUl.BiliBili_Anchor_Assistant.Tools
 {
     public class PlaySound : Event<SoundPlayer>
     {

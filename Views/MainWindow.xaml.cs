@@ -1,5 +1,5 @@
-﻿using BiliBili_Anchor_Assistant.Enum;
-using BiliBili_Anchor_Assistant.Tools;
+﻿using com.lZiMUl.BiliBili_Anchor_Assistant.Enum;
+using com.lZiMUl.BiliBili_Anchor_Assistant.Tools;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Windows;
@@ -7,7 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
-namespace BiliBili_Anchor_Assistant.Views
+namespace com.lZiMUl.BiliBili_Anchor_Assistant.Views
 {
     public class Result
     {
@@ -25,7 +25,6 @@ namespace BiliBili_Anchor_Assistant.Views
 
         public MainWindow()
         {
-            Icon = Config.Icon;
             ResizeMode = ResizeMode.NoResize;
             InitializeComponent();
 

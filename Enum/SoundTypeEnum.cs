@@ -1,4 +1,4 @@
-﻿namespace BiliBili_Anchor_Assistant.Enum
+﻿namespace com.lZiMUl.BiliBili_Anchor_Assistant.Enum
 {
     public enum SoundTypeEnum
     {

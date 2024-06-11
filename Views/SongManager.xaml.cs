@@ -1,10 +1,10 @@
-﻿using BiliBili_Anchor_Assistant.Enum;
-using BiliBili_Anchor_Assistant.Tools;
+﻿using com.lZiMUl.BiliBili_Anchor_Assistant.Enum;
+using com.lZiMUl.BiliBili_Anchor_Assistant.Tools;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace BiliBili_Anchor_Assistant.Views
+namespace com.lZiMUl.BiliBili_Anchor_Assistant.Views
 {
 
     public partial class SongManager
@@ -14,7 +14,6 @@ namespace BiliBili_Anchor_Assistant.Views
 
         public SongManager()
         {
-            Icon = Config.Icon;
             ResizeMode = ResizeMode.NoResize;
             InitializeComponent();
             MainWindow.AddWindow(this);

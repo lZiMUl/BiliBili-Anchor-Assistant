@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace BiliBili_Anchor_Assistant.Helper
+namespace com.lZiMUl.BiliBili_Anchor_Assistant.Helper
 {
     public static class DataGridHelper
     {

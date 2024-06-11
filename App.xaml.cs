@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace BiliBili_Anchor_Assistant
+namespace com.lZiMUl.BiliBili_Anchor_Assistant
 {
     /// <summary>
     ///     Interaction logic for App.xaml

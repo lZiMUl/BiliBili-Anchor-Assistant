@@ -69,9 +69,6 @@
     <data name="waiting" xml:space="preserve">
         <value>Waiting</value>
     </data>
-    <data name="menus" xml:space="preserve">
-        <value>Menu</value>
-    </data>
     <data name="languages" xml:space="preserve">
         <value>Languages</value>
     </data>
