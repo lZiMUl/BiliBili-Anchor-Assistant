@@ -17,8 +17,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant
 
     public struct Config
     {
-        public static readonly string AppFilePath = Assembly.GetExecutingAssembly().Location;
-        public static readonly string AppFileName = Path.GetFileName(AppFilePath).Replace("dll", "exe");
+        public static readonly string AppFileName = Assembly.GetExecutingAssembly().GetName().Name ?? "BiliBili Anchor Assistant";
         public static readonly ConfigurationManagerService<AppConfig> AppConfigurationManagerService = new("DefaultConfig.json", new AppConfig
         {
             RequiredReboot = false,

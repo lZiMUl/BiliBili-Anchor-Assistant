@@ -33,6 +33,8 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.ViewModels.Windows
                 CreateNoWindow = true
             };
 
+            MessageBox.Show(Config.AppFileName);
+
             Config.AppConfigurationManagerService.SaveConfig(new AppConfig
             {
                 RequiredReboot = true,
