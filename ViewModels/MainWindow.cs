@@ -58,10 +58,10 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.ViewModels
             {
                 _songManager?.AddSong(new SongManager.SongMeta
                 {
-                    Name = "a",
-                    Author = "b",
-                    Time = "c",
-                    Size = "d"
+                    Name = "测试(Test)",
+                    Author = "lZiMUl",
+                    Time = DateTime.Now.ToString("h:mm:ss"),
+                    Size = "114514TB"
                 });
             });
             BiliApi.AddListener(EventTypeEnum.Gift, data =>
@@ -79,10 +79,14 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.ViewModels
         {
             var clickedItem = sender as MenuItem;
             var dialog = new Dialog(Config.LanguageResource.Warning, Config.LanguageResource.WarningContent, clickedItem);
+            var appConfig = Config.AppConfigurationManagerService.LoadConfig();
 
-            if (clickedItem.Name != Config.AppConfigurationManagerService.LoadConfig().Language
-                && (!Config.AppConfigurationManagerService.LoadConfig().RequiredReboot ?? true)
-                && !dialog.IsVisible) dialog.Show();
+            if (clickedItem.Name != appConfig.Language
+                && !appConfig.RequiredReboot
+                && !dialog.IsVisible)
+            {
+                dialog.Show();
+            }
         }
 
         private void AboutEvent(object sender, RoutedEventArgs e)
@@ -106,11 +110,11 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.ViewModels
                         var data = await Http.Get<Result>(Config.GetRoomId.ToString());
                         if (data.code == 0)
                         {
-                            RoomIdTextBox.IsEnabled = false;
                             ConnectEvent(button);
+                            RoomIdTextBox.IsEnabled = false;
                             Config.AppConfigurationManagerService.SaveConfig(new AppConfig
                                 {
-                                    RoomId = int.Parse(RoomIdTextBox.Text)
+                                    RoomId = int.Parse(roomId)
                                 }
                             );
                             MessageBox.Show(data.data.ToString());

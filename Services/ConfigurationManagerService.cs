@@ -40,8 +40,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Services
                     {
                         object oldData = property.GetValue(LoadConfig());
                         object newData = property.GetValue(config);
-                        if (!string.IsNullOrEmpty(oldData?.ToString())
-                            && !string.IsNullOrEmpty(newData?.ToString())
+                        if (!string.IsNullOrEmpty(newData?.ToString())
                             && oldData != newData)
                             _json.Set(property.Name, newData);
                         else

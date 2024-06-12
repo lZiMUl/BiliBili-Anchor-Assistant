@@ -6,27 +6,25 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.ViewModels.Windows
 {
     public partial class Dialog
     {
-        private readonly MenuItem _clickedItem;
+
+        public readonly string ClickedItem;
 
         public Dialog(string title, string message, MenuItem clickedItem)
         {
             ResizeMode = ResizeMode.NoResize;
             InitializeComponent();
             MainWindow.AddWindow(this);
-            Title = title;
+
+            Title.Text = title;
             Message.Text = message;
-            _clickedItem = clickedItem;
+            ClickedItem = clickedItem.Name;
+
             ImmediateRestartButton.Content = Config.LanguageResource.ImmediateRestart;
             LaterRestartButton.Content = Config.LanguageResource.LaterRestart;
         }
 
         private void ImmediateRestartButtonEvent(object sender, RoutedEventArgs e)
         {
-            Config.AppConfigurationManagerService.SaveConfig(new AppConfig
-            {
-                RequiredReboot = true,
-                Language = _clickedItem.Name
-            });
             var startInfo = new ProcessStartInfo
             {
                 FileName = Config.AppFileName,
@@ -34,6 +32,12 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.ViewModels.Windows
                 RedirectStandardOutput = true,
                 CreateNoWindow = true
             };
+
+            Config.AppConfigurationManagerService.SaveConfig(new AppConfig
+            {
+                RequiredReboot = true,
+                Language = ClickedItem
+            });
 
             using (var exeProcess = Process.Start(startInfo))
             {

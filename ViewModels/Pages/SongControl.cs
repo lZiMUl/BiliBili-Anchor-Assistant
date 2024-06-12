@@ -1,8 +1,8 @@
 ﻿namespace com.lZiMUl.BiliBili_Anchor_Assistant.ViewModels.Pages
 {
-    public partial class Page1
+    public partial class SongControl
     {
-        public Page1()
+        public SongControl()
         {
             InitializeComponent();
             Previous.Source = Config.ImageResource.Previous;

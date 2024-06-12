@@ -27,6 +27,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.ViewModels.Windows
             ResizeMode = ResizeMode.NoResize;
             InitializeComponent();
             MainWindow.AddWindow(this);
+
             AddSongButton.Content = Config.LanguageResource.AddSong;
             Title.Header = Config.LanguageResource.Title;
             Author.Header = Config.LanguageResource.Author;
@@ -101,7 +102,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.ViewModels.Windows
             }
         }
 
-        private Label CreateLabel(string guid, string content, SolidColorBrush background) => new()
+        private Label CreateLabel(string guid, string content) => new()
         {
             Uid = guid,
             Content = content,
@@ -111,7 +112,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.ViewModels.Windows
             HorizontalContentAlignment = HorizontalAlignment.Left,
             VerticalContentAlignment = VerticalAlignment.Center,
             FontSize = 15,
-            Background = background
+            Background =  Brushes.BurlyWood
 
         };
 
@@ -125,10 +126,10 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.ViewModels.Windows
             {
                 new()
                 {
-                    TitleLabel = CreateLabel(guid, song.Name ?? "Error", Brushes.BurlyWood),
-                    AuthorLabel = CreateLabel(guid, song.Author ?? "Error", Brushes.BurlyWood),
-                    TimeLabel = CreateLabel(guid, song.Time ?? "Error", Brushes.BurlyWood),
-                    SizeLabel = CreateLabel(guid, song.Size ?? "Error", Brushes.BurlyWood),
+                    TitleLabel = CreateLabel(guid, song.Name),
+                    AuthorLabel = CreateLabel(guid, song.Author),
+                    TimeLabel = CreateLabel(guid, song.Time),
+                    SizeLabel = CreateLabel(guid, song.Size),
                     ActionButton = new Button
                     {
                         TabIndex = 5,

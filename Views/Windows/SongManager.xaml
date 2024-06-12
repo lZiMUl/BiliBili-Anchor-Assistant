@@ -76,6 +76,6 @@
                 </Style>
             </ListView.ItemContainerStyle>
         </ListView>
-        <Frame Grid.Row="4" Source="/Views/Pages/Page1.xaml" HorizontalAlignment="Center" Width="270" />
+        <Frame Grid.Row="4" Source="/Views/Pages/SongControl.xaml" HorizontalAlignment="Center" Width="270" />
     </Grid>
 </Window>

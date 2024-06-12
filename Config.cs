@@ -10,8 +10,8 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant
 {
     public class AppConfig
     {
-        public bool? RequiredReboot { get; init; }
-        public string? Language { get; init; }
+        public bool RequiredReboot { get; init; }
+        public string Language { get; init; }
         public int? RoomId { get; init; }
     }
 
@@ -23,7 +23,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant
         {
             RequiredReboot = false,
             Language = "EnUs",
-            RoomId = 9329583
+            RoomId = null
         }, true);
         public static readonly ConfigurationManagerService<List<SongManager.Song>> SongListConfigurationManagerService = new("SongListConfig.json", new List<SongManager.Song>(), false);
         public static readonly string AppHomeUrl = "https://lzimul.top";
