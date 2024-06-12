@@ -9,8 +9,7 @@
         <UseWPF>true</UseWPF>
         <LangVersion>default</LangVersion>
         <SignAssembly>true</SignAssembly>
-        <ApplicationIcon>Resources\Images\Icon.ico</ApplicationIcon>
-        <Title>BiliBili Anchor Assistant666</Title>
+        <Title>BiliBili Anchor Assistant</Title>
         <Authors>lZiMUl</Authors>
         <Description>BiliBili Anchor Assistant</Description>
         <PackageIcon>Icon.ico</PackageIcon>
@@ -20,6 +19,9 @@
         <NeutralLanguage>en-US</NeutralLanguage>
         <PackageLicenseUrl>https://lzimul.top</PackageLicenseUrl>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <PackageProjectUrl>https://lzimul.top</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/lZiMUl/BiliBili-Anchor-Assistant</RepositoryUrl>
+        <ApplicationIcon>Resources\Images\Icon.ico</ApplicationIcon>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
