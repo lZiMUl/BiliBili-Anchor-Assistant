@@ -11,9 +11,9 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <StackPanel>
         <StackPanel HorizontalAlignment="Center" Width="270" Orientation="Horizontal">
-            <Image x:Name="Previous" Width="50" Height="50" Margin="20" />
-            <Image x:Name="Play" Width="50" Height="50" Margin="20" />
-            <Image x:Name="Next" Width="50" Height="50" Margin="20" />
+            <Image x:Name="Previous" Width="50" Height="50" Margin="20" TouchDown="TouchDownEvent" />
+            <Image x:Name="Play" Width="50" Height="50" Margin="20" TouchDown="TouchDownEvent" />
+            <Image x:Name="Next" Width="50" Height="50" Margin="20" TouchDown="TouchDownEvent" />
         </StackPanel>
     </StackPanel>
 </Page>
