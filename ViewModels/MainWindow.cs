@@ -106,8 +106,8 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.ViewModels
                     var reg = new Regex("^[0-9]{1,15}$");
                     if (reg.Match(IntPtr.Parse(roomId).ToString()).Success)
                     {
-                        Config.GetRoomId.Query = $"?id={roomId}";
-                        var data = await Http.Get<Result>(Config.GetRoomId.ToString());
+                        Config.Api.GetRoomId.Query = $"?id={roomId}";
+                        var data = await Http.Get<Result>(Config.Api.GetRoomId.ToString());
                         if (data.code == 0)
                         {
                             ConnectEvent(button);

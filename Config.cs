@@ -25,11 +25,16 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant
             RoomId = null
         }, true);
         public static readonly ConfigurationManagerService<List<SongManager.Song>> SongListConfigurationManagerService = new("SongListConfig.json", new List<SongManager.Song>(), false);
+        public static readonly string NewAppHomeUrl = "https://lzimul.com";
         public static readonly string AppHomeUrl = "https://lzimul.top";
-        public static readonly UriBuilder GetRoomId = new("https://api.live.bilibili.com/room/v1/Room/room_init");
-        public static readonly UriBuilder GetChatServer = new("https://api.live.bilibili.com/room/v1/Danmu/getConf");
         public static readonly ResourceManager EnglishResourceManager = new("com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages.en_US", Assembly.GetExecutingAssembly());
         public static readonly ResourceManager ChineseResourceManager = new("com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages.zh_CN", Assembly.GetExecutingAssembly());
+
+        public static class Api
+        {
+            public static readonly UriBuilder GetRoomId = new("https://api.live.bilibili.com/room/v1/Room/room_init");
+            public static readonly UriBuilder GetChatServer = new("https://api.live.bilibili.com/room/v1/Danmu/getConf");
+        }
 
         public static class ImageResource
         {
