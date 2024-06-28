@@ -9,8 +9,8 @@
 
 namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
     using System;
-
-
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -22,15 +22,15 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class zh_CN {
-
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal zh_CN() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
@@ -44,7 +44,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
@@ -58,7 +58,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 resourceCulture = value;
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to 关于.
         /// </summary>
@@ -67,7 +67,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("about", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to 活动.
         /// </summary>
@@ -76,7 +76,16 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("action", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 激活.
+        /// </summary>
+        internal static string activate {
+            get {
+                return ResourceManager.GetString("activate", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to 添加歌曲.
         /// </summary>
@@ -85,7 +94,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("add_song", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to 作家.
         /// </summary>
@@ -94,7 +103,25 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("author", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 购买激活码.
+        /// </summary>
+        internal static string buy_activate_code {
+            get {
+                return ResourceManager.GetString("buy_activate_code", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 激活码 提示.
+        /// </summary>
+        internal static string code_tips {
+            get {
+                return ResourceManager.GetString("code_tips", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to 连接.
         /// </summary>
@@ -103,7 +130,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("connect", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to 已连接.
         /// </summary>
@@ -112,7 +139,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("connected", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to 删除.
         /// </summary>
@@ -121,7 +148,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("delete", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to 断开连接.
         /// </summary>
@@ -130,7 +157,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("disconnect", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to 已断开.
         /// </summary>
@@ -139,7 +166,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("disconnected", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to 英文.
         /// </summary>
@@ -148,7 +175,16 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("en_us", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 退出.
+        /// </summary>
+        internal static string exit {
+            get {
+                return ResourceManager.GetString("exit", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to 立即重启.
         /// </summary>
@@ -157,7 +193,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("immediate_restart", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to 语言.
         /// </summary>
@@ -166,7 +202,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("languages", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to 稍后重启.
         /// </summary>
@@ -175,7 +211,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("later_restart", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to 菜单.
         /// </summary>
@@ -184,7 +220,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("menus", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to 房间 Id: .
         /// </summary>
@@ -193,7 +229,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("room_id", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to 设置.
         /// </summary>
@@ -202,7 +238,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("settings", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to 大小.
         /// </summary>
@@ -211,7 +247,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("size", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to 歌曲管理器.
         /// </summary>
@@ -220,7 +256,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("song_manager", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to 时间.
         /// </summary>
@@ -229,7 +265,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("time", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to 标题.
         /// </summary>
@@ -238,7 +274,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("title", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to 等待中.
         /// </summary>
@@ -247,7 +283,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("waiting", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to 警告.
         /// </summary>
@@ -256,7 +292,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("warning", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to 由于您更改了客户端语言, 需要重启客户端才能生效, 是否现在重启?.
         /// </summary>
@@ -265,7 +301,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("warning_content", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to 简体中文.
         /// </summary>

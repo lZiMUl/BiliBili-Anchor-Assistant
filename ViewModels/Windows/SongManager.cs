@@ -26,7 +26,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.ViewModels.Windows
         {
             ResizeMode = ResizeMode.NoResize;
             InitializeComponent();
-            MainWindow.AddWindow(this);
+            Home.AddWindow(this);
 
             AddSongButton.Content = Config.LanguageResource.AddSong;
             Title.Header = Config.LanguageResource.Title;
@@ -112,7 +112,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.ViewModels.Windows
             HorizontalContentAlignment = HorizontalAlignment.Left,
             VerticalContentAlignment = VerticalAlignment.Center,
             FontSize = 15,
-            Background =  Brushes.BurlyWood
+            Background = Brushes.BurlyWood
 
         };
 

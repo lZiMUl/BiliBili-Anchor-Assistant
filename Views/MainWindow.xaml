@@ -1,46 +1,24 @@
 ﻿<Window x:Class="com.lZiMUl.BiliBili_Anchor_Assistant.ViewModels.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d"
-        Title="BiliBili Anchor Assistant (By lZiMUl)" Width="450" Height="150"
-        WindowStartupLocation="CenterScreen">
+        Height="250" Width="350"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Resources/Styles/DefaultStyle.xaml" />
-                <ResourceDictionary Source="/Resources/Styles/MainWindowsStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
-        <StackPanel Panel.ZIndex="0">
-            <ToolBar Style="{StaticResource ToolBarStyle}" Background="CornflowerBlue">
-                <Menu Background="CornflowerBlue">
-                    <MenuItem x:Name="Menus" Click="MenuEvent">
-                        <MenuItem Header="??????" />
-                    </MenuItem>
-                    <MenuItem x:Name="SettingsMenu">
-                        <MenuItem x:Name="LanguagesMenu">
-                            <MenuItem x:Name="EnUs" Click="LanguagesChooseEvent" />
-                            <MenuItem x:Name="ZhCn" Click="LanguagesChooseEvent" />
-                        </MenuItem>
-                        <MenuItem x:Name="AboutMenu" Click="AboutEvent" />
-                    </MenuItem>
-                </Menu>
-            </ToolBar>
-        </StackPanel>
-        <StackPanel Panel.ZIndex="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center"
-                    Style="{StaticResource StackPanelStyle}">
-            <TextBlock x:Name="RoomIdTextBlock" Style="{StaticResource TextBlockStyle}" />
-            <TextBox x:Name="RoomIdTextBox" Width="120" Height="35" Style="{StaticResource TextBoxStyle}" />
-            <Button x:Name="ConnectButton" Click="ConnectButtonEvent" MouseEnter="ConnectButtonMouseEnter"
-                    MouseLeave="ConnectButtonMouseLeave" Width="100" Height="35" Background="OrangeRed"
-                    Style="{StaticResource ButtonStyle}" />
-            <Button x:Name="SongManagerButton" Click="SongManagerButtonEvent" MouseEnter="SongManagerButtonMouseEnter"
-                    MouseLeave="SongManagerButtonMouseLeave" Width="100" Height="35" Background="Tan"
-                    Style="{StaticResource ButtonStyle}" />
+        <Frame Panel.ZIndex="0" Source="./Pages/ToolBox.xaml" />
+        <StackPanel Panel.ZIndex="1" Margin="0 15 0 0" >
+            <TextBlock x:Name="CodeTips" Style="{StaticResource TextBlockStyle}" />
+            <TextBox x:Name="Code" Style="{StaticResource TextBoxStyle}" Height="35" />
+            <Button x:Name="Activate" Click="ActivateEvent" Style="{StaticResource ButtonStyle}" Background="Orange" Width="200" Height="35" />
+            <Button x:Name="BuyActivateCode" Click="BuyActivateCodeEvent" Style="{StaticResource ButtonStyle}" Width="200" Height="35" />
+            <Button x:Name="Exit" Click="ExitEvent" Style="{StaticResource ButtonStyle}" Width="200" Height="35" />
         </StackPanel>
     </Grid>
 </Window>

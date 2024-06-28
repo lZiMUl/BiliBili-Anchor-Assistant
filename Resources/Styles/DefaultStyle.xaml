@@ -3,6 +3,29 @@
     <Style x:Key="StackPanelStyle" TargetType="StackPanel">
         <Setter Property="Margin" Value="0 30 0 0" />
     </Style>
+    <Style x:Key="TextBlockStyle" TargetType="TextBlock">
+        <Setter Property="Margin" Value="5 6" />
+        <Setter Property="Padding" Value="0 6" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="FontWeight" Value="Normal" />
+    </Style>
+    <Style x:Key="TextBoxStyle" TargetType="TextBox">
+        <Setter Property="Background" Value="LightBlue" />
+        <Setter Property="Margin" Value="5 0" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border Background="{TemplateBinding Background}" BorderThickness="1" CornerRadius="5">
+                        <ScrollViewer x:Name="PART_ContentHost" VerticalAlignment="Center" Margin="5 0" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
     <Style x:Key="ButtonStyle" TargetType="Button">
         <Setter Property="Margin" Value="5 0" />
         <Setter Property="FontFamily" Value="Segoe UI" />

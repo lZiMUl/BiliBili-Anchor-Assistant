@@ -13,7 +13,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.ViewModels.Windows
         {
             ResizeMode = ResizeMode.NoResize;
             InitializeComponent();
-            MainWindow.AddWindow(this);
+            Home.AddWindow(this);
 
             Title.Text = title;
             Message.Text = message;

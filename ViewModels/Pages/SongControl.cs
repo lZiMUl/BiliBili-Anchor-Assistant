@@ -42,14 +42,12 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.ViewModels.Pages
                     throw new SyntaxErrorException(ToString());
             }
         }
-
         private static void PreviousSong()
         {
-
         }
 
 
-    private static void NextSong()
+        private static void NextSong()
         {
 
         }

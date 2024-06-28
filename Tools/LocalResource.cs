@@ -2,7 +2,7 @@
 
 namespace com.lZiMUl.BiliBili_Anchor_Assistant.Tools
 {
-    public class LocalResource
+    public static class LocalResource
     {
         public static BitmapImage GetUiImage(string fileName) => new(new Uri($"pack://application:,,,/;component/Resources/Images/UI/{fileName}.png"));
 

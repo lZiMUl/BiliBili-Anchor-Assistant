@@ -54,6 +54,11 @@
         <Page Update="Views\Windows\SongManager.xaml">
             <Generator>MSBuild:Compile</Generator>
         </Page>
+        <Page Update="Views\Pages\ToolBox.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <XamlRuntime>Wpf</XamlRuntime>
+            <SubType>Designer</SubType>
+        </Page>
     </ItemGroup>
 
     <ItemGroup>

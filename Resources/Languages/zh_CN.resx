@@ -96,4 +96,16 @@
     <data name="add_song" xml:space="preserve">
         <value>添加歌曲</value>
     </data>
+    <data name="activate" xml:space="preserve">
+        <value>激活</value>
+    </data>
+    <data name="exit" xml:space="preserve">
+        <value>退出</value>
+    </data>
+    <data name="code_tips" xml:space="preserve">
+        <value>激活码 提示</value>
+    </data>
+    <data name="buy_activate_code" xml:space="preserve">
+        <value>购买激活码</value>
+    </data>
 </root>

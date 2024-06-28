@@ -9,8 +9,8 @@
 
 namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
     using System;
-
-
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -22,15 +22,15 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class en_US {
-
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal en_US() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
@@ -44,7 +44,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
@@ -58,7 +58,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 resourceCulture = value;
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to About.
         /// </summary>
@@ -67,7 +67,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("about", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Action.
         /// </summary>
@@ -76,7 +76,16 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("action", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Activate.
+        /// </summary>
+        internal static string activate {
+            get {
+                return ResourceManager.GetString("activate", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Add song.
         /// </summary>
@@ -85,7 +94,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("add_song", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Author.
         /// </summary>
@@ -94,7 +103,25 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("author", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Buy Activate Code.
+        /// </summary>
+        internal static string buy_activate_code {
+            get {
+                return ResourceManager.GetString("buy_activate_code", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Code Tips.
+        /// </summary>
+        internal static string code_tips {
+            get {
+                return ResourceManager.GetString("code_tips", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Connect.
         /// </summary>
@@ -103,7 +130,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("connect", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Connected.
         /// </summary>
@@ -112,7 +139,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("connected", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
@@ -121,7 +148,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("delete", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Disconnect.
         /// </summary>
@@ -130,7 +157,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("disconnect", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Disconnected.
         /// </summary>
@@ -139,7 +166,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("disconnected", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to English.
         /// </summary>
@@ -148,7 +175,16 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("en_us", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exit.
+        /// </summary>
+        internal static string exit {
+            get {
+                return ResourceManager.GetString("exit", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Immediate restart.
         /// </summary>
@@ -157,7 +193,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("immediate_restart", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Languages.
         /// </summary>
@@ -166,7 +202,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("languages", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Later restart.
         /// </summary>
@@ -175,7 +211,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("later_restart", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Menus.
         /// </summary>
@@ -184,7 +220,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("menus", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Room Id: .
         /// </summary>
@@ -193,7 +229,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("room_id", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
@@ -202,7 +238,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("settings", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Size.
         /// </summary>
@@ -211,7 +247,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("size", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Song manager.
         /// </summary>
@@ -220,7 +256,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("song_manager", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Time.
         /// </summary>
@@ -229,7 +265,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("time", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Title.
         /// </summary>
@@ -238,7 +274,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("title", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Waiting.
         /// </summary>
@@ -247,7 +283,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("waiting", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Warning.
         /// </summary>
@@ -256,7 +292,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("warning", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Since you changed the client language, you need to restart the client for it to take effect, do you want to restart now?.
         /// </summary>
@@ -265,7 +301,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages {
                 return ResourceManager.GetString("warning_content", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Chinese.
         /// </summary>

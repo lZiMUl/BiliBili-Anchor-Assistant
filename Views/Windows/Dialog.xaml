@@ -8,7 +8,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Resources/Styles/DefaultStyle.xaml" />
-                <ResourceDictionary Source="/Resources/Styles/Dialog.xaml" />
+                <ResourceDictionary Source="/Resources/Styles/DialogStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
@@ -21,7 +21,7 @@
         </Grid.RowDefinitions>
         <TextBlock x:Name="Title" Grid.Row="0" TextWrapping="Wrap" Margin="0 0 0 5" />
         <Border Grid.Row="1" BorderThickness="0 2" BorderBrush="Gray" HorizontalAlignment="Stretch" />
-        <TextBlock x:Name="Message" Grid.Row="2" TextWrapping="Wrap" Margin="0 5 0 0"/>
+        <TextBlock x:Name="Message" Grid.Row="2" TextWrapping="Wrap" Margin="0 5 0 0" />
         <Grid Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Bottom">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />

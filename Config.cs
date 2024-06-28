@@ -1,7 +1,6 @@
 ﻿using com.lZiMUl.BiliBili_Anchor_Assistant.Services;
 using com.lZiMUl.BiliBili_Anchor_Assistant.Tools;
 using com.lZiMUl.BiliBili_Anchor_Assistant.ViewModels.Windows;
-using System.IO;
 using System.Reflection;
 using System.Resources;
 using System.Windows.Media.Imaging;
@@ -10,6 +9,7 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant
 {
     public class AppConfig
     {
+        public string? ActivateCode { get; init; }
         public bool RequiredReboot { get; init; }
         public string Language { get; init; }
         public int? RoomId { get; init; }
@@ -20,13 +20,17 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant
         public static readonly string AppFileName = Assembly.GetExecutingAssembly().GetName().Name ?? "BiliBili Anchor Assistant";
         public static readonly ConfigurationManagerService<AppConfig> AppConfigurationManagerService = new("DefaultConfig.json", new AppConfig
         {
+            ActivateCode = null,
             RequiredReboot = false,
             Language = "EnUs",
             RoomId = null
         }, true);
         public static readonly ConfigurationManagerService<List<SongManager.Song>> SongListConfigurationManagerService = new("SongListConfig.json", new List<SongManager.Song>(), false);
         public static readonly string NewAppHomeUrl = "https://lzimul.com";
+        public static readonly string NewBuyActivateCodeUrl = "https://lzimul.com";
         public static readonly string AppHomeUrl = "https://lzimul.top";
+        public static readonly string BuyActivateCodeUrl = "https://lzimul.top";
+        public static readonly string V = "";
         public static readonly ResourceManager EnglishResourceManager = new("com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages.en_US", Assembly.GetExecutingAssembly());
         public static readonly ResourceManager ChineseResourceManager = new("com.lZiMUl.BiliBili_Anchor_Assistant.Resources.Languages.zh_CN", Assembly.GetExecutingAssembly());
 
@@ -46,6 +50,12 @@ namespace com.lZiMUl.BiliBili_Anchor_Assistant
 
         public static class LanguageResource
         {
+            // new Res
+            public static readonly string CodeTips = LocalResource.GetLocalizedString("code_tips");
+            public static readonly string Activate = LocalResource.GetLocalizedString("activate");
+            public static readonly string BuyActivateCode = LocalResource.GetLocalizedString("buy_activate_code");
+            public static readonly string Exit = LocalResource.GetLocalizedString("exit");
+
             public static readonly string Menus = LocalResource.GetLocalizedString("menus");
             public static readonly string Settings = LocalResource.GetLocalizedString("settings");
             public static readonly string Languages = LocalResource.GetLocalizedString("languages");

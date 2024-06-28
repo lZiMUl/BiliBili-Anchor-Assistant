@@ -96,4 +96,16 @@
     <data name="add_song" xml:space="preserve">
         <value>Add song</value>
     </data>
+    <data name="activate" xml:space="preserve">
+        <value>Activate</value>
+    </data>
+    <data name="exit" xml:space="preserve">
+        <value>Exit</value>
+    </data>
+    <data name="code_tips" xml:space="preserve">
+        <value>Code Tips</value>
+    </data>
+    <data name="buy_activate_code" xml:space="preserve">
+        <value>Buy Activate Code</value>
+    </data>
 </root>
